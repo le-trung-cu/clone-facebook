@@ -1,0 +1,59 @@
+GET http://localhost:8080 HTTP/1.1
+Content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+###
+POST http://localhost:8080/auth/signup HTTP/1.1
+Content-type: application/json
+
+{
+    "first_name": "le",
+    "last_name": "a",
+    "username": "a14",
+    "email": "a14@mgmail.com",
+    "password": "Admin@123",
+    "bYear": 1995,
+    "bMonth": 1,
+    "bDay": 1,
+    "gender": "man"
+}
+
+###
+POST http://localhost:8080/auth/signin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "a14@mgmail.com",
+    "password": "Admin@123"
+}
+
+###
+GET http://localhost:8080/auth/activate/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWM5YTA0YTU1NzY4YjE3NzA3NmExZSIsImlhdCI6MTY4Mzc5MDM0MCwiZXhwIjoxNjgzNzkyMTQwfQ.L1rmISw05nJSLWk7BHA9BP1lv_62Lsfi4o6W2q1-72w
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWM5YTA0YTU1NzY4YjE3NzA3NmExZSIsInZlcmlmaWVkIjpmYWxzZSwiZW1haWwiOiJhMTRAbWdtYWlsLmNvbSIsImlzc3VlciI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZGllbmNlIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwIiwiaWF0IjoxNjgzNzkwNDYyLCJleHAiOjE2ODM4MTkyNjJ9.2475fi02hAYLZjIOHE927m5s12BjLUChoMnSXIwYKpY
+
+###
+GET http://localhost:8080/profile
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImExMkBtZ21haWwuY29tIiwiaXNzdWVyIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwIiwiYXVkaWVuY2UiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJpYXQiOjE2ODM2OTAyOTAsImV4cCI6MTY4MzY5Mzg5MH0.FSXiVoApIIXw0wWFdXvEev8LnUJUjJ0bP8BZXIlAuaY
+
+### reset-password-code
+POST http://localhost:8080/auth/reset-password-code
+Content-Type: application/json
+
+{
+    "email": "a14@mgmail.com"
+}
+
+### verify-reset-password-code
+POST http://localhost:8080/auth/verify-reset-password-code
+Content-Type: application/json
+
+{
+    "email": "a14@mgmail.com",
+    "code": "8381"
+}
