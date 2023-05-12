@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sign-up__input {
+    @apply rounded border border-gray-500 bg-gray-200 bg-opacity-40 px-5 leading-relaxed focus:outline-none
+  }
+}

@@ -1,0 +1,11 @@
+@font-face {
+  font-family: SFProDisplay;
+  font-weight: normal;
+  src: url('./sf-pro-display_regular.woff2');
+}
+
+@font-face {
+  font-family: SFProDisplay;
+  font-weight: bold;
+  src: url('./sf-pro-display-bold.woff2');
+}
